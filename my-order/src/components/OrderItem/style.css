@@ -83,8 +83,8 @@
 	background-color: #999;
 }
 
-.orderItem__commentContainer {
-
+.orderItem__comment {
+	width:100%;
 }
 
 .orderItem__commentContainer div {
@@ -93,9 +93,9 @@
 }
 
 .orderItem__star--light {
-	color: #e9203d;
+	color: red;
 }
 
-.orderItem__starts {
-	color:#777;
+.orderItem__star {
+	color: grey;
 }

@@ -24,7 +24,8 @@ import OrderItem from '../OrderItem';
  			<div>
  				{
  					this.state.data.map(item => {
- 						return <OrderItem key={item.id} data={item}/>
+ 						return <OrderItem key={item.id} data={item} onSubmit={this.handleSubmit}/>
+ 						
  					})
  				}
  				
@@ -33,6 +34,20 @@ import OrderItem from '../OrderItem';
  			</div>
 
  		);
+ 	}
+ 	handleSubmit = (id,comment,stars) => {
+ 		const newData = this.state.data.map(item => {
+ 			return item.id === id ? 
+ 			{
+ 				...item,
+ 				comment,
+ 				stars,
+ 				ifCommented:true
+ 			}: item;
+ 		});
+ 		this.setState({
+ 			data:newData
+ 		});
  	}
  }
 
